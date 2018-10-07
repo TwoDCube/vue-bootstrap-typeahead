@@ -15,12 +15,12 @@ export default {
   name: 'VueBootstrapTypeaheadListItem',
 
   props: {
+    active: {
+      type: Boolean
+    },
     data: {},
     htmlText: {
       type: String
-    },
-    active: {
-      type: Boolean
     },
     backgroundVariant: {
       type: String
@@ -29,6 +29,7 @@ export default {
       type: String
     }
   },
+
 
   computed: {
     textClasses() {
