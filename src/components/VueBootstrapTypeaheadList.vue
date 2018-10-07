@@ -1,5 +1,5 @@
 <template>
-  <div class="list-group shadow" ref="suggestionList>
+  <div class="list-group shadow" ref="suggestionList">
     <vue-bootstrap-typeahead-list-item
       v-for="(item, id) in matchedItems" :key="id"
       :active="isListItemActive(id)"
