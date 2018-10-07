@@ -1,6 +1,14 @@
 <template>
   <div class='list-group shadow' ref='suggestionList'>
-    <vue-bootstrap-typeahead-list-item v-for='(item, id) in matchedItems' :key='id' :data='item.data' :active='isListItemActive(id)' :html-text='highlight(item.text)' :background-variant='backgroundVariant' :text-variant='textVariant' @click.native='handleHit(item, $event)'>
+    <vue-bootstrap-typeahead-list-item
+      v-for='(item, id) in matchedItems'
+      :key='id'
+      :data='item.data'
+      :active='isListItemActive(id)'
+      :html-text='highlight(item.text)'
+      :background-variant='backgroundVariant'
+      :text-variant='textVariant'
+      @click.native='handleHit(item, $event)'>
       <template v-if='$scopedSlots.suggestion' slot='suggestion' slot-scope='{ data, htmlText }'>
         <slot name='suggestion' v-bind='{ data, htmlText }' />
       </template>
