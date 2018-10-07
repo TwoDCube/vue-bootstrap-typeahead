@@ -12,7 +12,7 @@
 import VueBootstrapTypeaheadListItem from './VueBootstrapTypeaheadListItem.vue'
 
 function sanitize(text) {
-  return text.replace(/</g, '&lt').replace(/>/g, '&gt')
+  return text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 function escapeRegExp(str) {
