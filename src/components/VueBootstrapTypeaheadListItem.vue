@@ -30,7 +30,6 @@ export default {
     }
   },
 
-
   computed: {
     textClasses() {
       const classes = ['vbst-item', 'list-group-item', 'list-group-item-action']

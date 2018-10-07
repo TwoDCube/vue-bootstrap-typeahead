@@ -161,7 +161,7 @@ export default {
       if (typeof this.value !== 'undefined') {
         this.$emit('input', newValue)
       }
-    },
+    }
   },
 
   data() {
