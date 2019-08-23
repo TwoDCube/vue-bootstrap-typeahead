@@ -179,6 +179,9 @@ export default {
   watch: {
     'value'(newValue) {
       this.inputValue = newValue
+    },
+    'inputValue'(newValue) {
+      this.value = newValue
     }
   },
 
