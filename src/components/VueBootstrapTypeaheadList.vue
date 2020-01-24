@@ -82,15 +82,14 @@ export default {
         return []
       }
 
-      const re = new RegExp(this.escapedQuery, 'gi')
+      const re = new RegExp(deburr(this.escapedQuery), 'gi')
 
       // Filter, sort, and concat
       return this.data
-        .map(i => ({...i, text: deburr(i.text)}))
-        .filter(i => i.text.match(re) !== null)
+        .filter(i => deburr(i.text).match(re) !== null)
         .sort((a, b) => {
-          const aIndex = a.text.indexOf(a.text.match(re)[0])
-          const bIndex = b.text.indexOf(b.text.match(re)[0])
+          const aIndex = deburr(a.text).indexOf(deburr(a.text).match(re)[0])
+          const bIndex = deburr(b.text).indexOf(deburr(b.text).match(re)[0])
 
           if (aIndex < bIndex) { return -1 }
           if (aIndex > bIndex) { return 1 }

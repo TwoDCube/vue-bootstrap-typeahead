@@ -1,6 +1,6 @@
 {
   "name": "twodcube-vue-bootstrap-typeahead",
-  "version": "0.2.8",
+  "version": "0.2.11",
   "private": false,
   "description": "A typeahead/autocomplete component for Vue 2 using Bootstrap 4",
   "keywords": [
