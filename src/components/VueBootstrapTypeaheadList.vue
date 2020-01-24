@@ -17,6 +17,7 @@
 
 <script>
 import VueBootstrapTypeaheadListItem from './VueBootstrapTypeaheadListItem.vue'
+import deburr from 'lodash.deburr'
 
 function sanitize(text) {
   return text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -85,6 +86,7 @@ export default {
 
       // Filter, sort, and concat
       return this.data
+        .map(i => ({...i, text: deburr(i.text)}))
         .filter(i => i.text.match(re) !== null)
         .sort((a, b) => {
           const aIndex = a.text.indexOf(a.text.match(re)[0])
